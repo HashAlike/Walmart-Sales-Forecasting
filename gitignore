@@ -7,6 +7,11 @@
 # Jupyter
 .ipynb_checkpoints/
 *-checkpoint.ipynb
+train.csv
+test.csv
+stores.csv
+features.csv
+walmart.db
 
 # Python
 __pycache__/
