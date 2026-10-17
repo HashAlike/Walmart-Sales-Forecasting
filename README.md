@@ -71,14 +71,19 @@ Three models were compared: Linear Regression (baseline), Random Forest, and XGB
 - **Final model: Random Forest (Tuned)** — lowest error, highest explanatory power.
 - Feature importance analysis showed `lag_1` dominating the model (~85% importance). However, removing `lag_1` only dropped performance by ~0.5% — indicating the model isn't overly reliant on a single signal, but has genuinely learned the underlying autocorrelation structure of sales.
 - Predictions on the test set were visualized over time; the model successfully anticipated the sales surge during holiday periods (Nov-Dec 2012) it had never seen before.
-
 ## How to Run
 
-```bash
-pip install pandas numpy scikit-learn xgboost matplotlib
+1. Clone the repository and install the dependencies:
+
+```
+git clone https://github.com/HashAlike/Walmart-Sales-Forecasting.git
+cd Walmart-Sales-Forecasting
+pip install pandas numpy scikit-learn xgboost matplotlib jupyter
 ```
 
-Run the notebook sections in order: data loading → EDA → feature engineering → modeling → test predictions.
+2. Download the dataset from [Kaggle - Walmart Sales Forecast](https://www.kaggle.com/datasets/aslanahmedov/walmart-sales-forecast) and place `train.csv`, `test.csv`, `stores.csv` and `features.csv` in the project folder (the same folder as the notebook). The data files are not included in this repository.
+
+3. Open `walmart-sales-forecasting.ipynb` and run the sections in order: data loading → EDA → feature engineering → modeling → test predictions. The SQLite database (`walmart.db`) is created when the notebook loads the CSV files.
 
 ## Key Takeaways
 
